@@ -10,7 +10,7 @@ view: user_order_facts {
       FROM ecomm.order_items
       GROUP BY user_id
        ;;
-    datagroup_trigger: ecommerce_etl
+    datagroup_trigger: air_quality_default_datagroup
   }
 
   dimension: user_id {
