@@ -1,16 +1,16 @@
 view: inventory_items {
-  sql_table_name: public.inventory_items ;;
+  sql_table_name: PUBLIC.INVENTORY_ITEMS ;;
   drill_fields: [id]
 
   dimension: id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}."ID" ;;
   }
 
   dimension: cost {
     type: number
-    sql: ${TABLE}.cost ;;
+    sql: ${TABLE}."COST" ;;
   }
 
   dimension_group: created {
@@ -24,48 +24,48 @@ view: inventory_items {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_at ;;
+    sql: ${TABLE}."CREATED_AT" ;;
   }
 
   dimension: product_brand {
     type: string
-    sql: ${TABLE}.product_brand ;;
+    sql: ${TABLE}."PRODUCT_BRAND" ;;
   }
 
   dimension: product_category {
     type: string
-    sql: ${TABLE}.product_category ;;
+    sql: ${TABLE}."PRODUCT_CATEGORY" ;;
   }
 
   dimension: product_department {
     type: string
-    sql: ${TABLE}.product_department ;;
+    sql: ${TABLE}."PRODUCT_DEPARTMENT" ;;
   }
 
   dimension: product_distribution_center_id {
     type: number
-    sql: ${TABLE}.product_distribution_center_id ;;
+    sql: ${TABLE}."PRODUCT_DISTRIBUTION_CENTER_ID" ;;
   }
 
   dimension: product_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.product_id ;;
+    sql: ${TABLE}."PRODUCT_ID" ;;
   }
 
   dimension: product_name {
     type: string
-    sql: ${TABLE}.product_name ;;
+    sql: ${TABLE}."PRODUCT_NAME" ;;
   }
 
   dimension: product_retail_price {
     type: number
-    sql: ${TABLE}.product_retail_price ;;
+    sql: ${TABLE}."PRODUCT_RETAIL_PRICE" ;;
   }
 
   dimension: product_sku {
     type: string
-    sql: ${TABLE}.product_sku ;;
+    sql: ${TABLE}."PRODUCT_SKU" ;;
   }
 
   dimension_group: sold {
@@ -79,7 +79,7 @@ view: inventory_items {
       quarter,
       year
     ]
-    sql: ${TABLE}.sold_at ;;
+    sql: ${TABLE}."SOLD_AT" ;;
   }
 
   measure: count {

@@ -1,26 +1,26 @@
 view: distribution_centers {
-  sql_table_name: public.distribution_centers ;;
+  sql_table_name: PUBLIC.DISTRIBUTION_CENTERS ;;
   drill_fields: [id]
 
   dimension: id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}."ID" ;;
   }
 
   dimension: latitude {
     type: number
-    sql: ${TABLE}.latitude ;;
+    sql: ${TABLE}."LATITUDE" ;;
   }
 
   dimension: longitude {
     type: number
-    sql: ${TABLE}.longitude ;;
+    sql: ${TABLE}."LONGITUDE" ;;
   }
 
   dimension: name {
     type: string
-    sql: ${TABLE}.name ;;
+    sql: ${TABLE}."NAME" ;;
   }
 
   measure: count {

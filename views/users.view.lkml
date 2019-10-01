@@ -1,27 +1,27 @@
 view: users {
-  sql_table_name: public.users ;;
+  sql_table_name: PUBLIC.USERS ;;
   drill_fields: [id]
 
   dimension: id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}."ID" ;;
   }
 
   dimension: age {
     type: number
-    sql: ${TABLE}.age ;;
+    sql: ${TABLE}."AGE" ;;
   }
 
   dimension: city {
     type: string
-    sql: ${TABLE}.city ;;
+    sql: ${TABLE}."CITY" ;;
   }
 
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}.country ;;
+    sql: ${TABLE}."COUNTRY" ;;
   }
 
   dimension_group: created {
@@ -35,56 +35,56 @@ view: users {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_at ;;
+    sql: ${TABLE}."CREATED_AT" ;;
   }
 
   dimension: email {
     type: string
-    sql: ${TABLE}.email ;;
+    sql: ${TABLE}."EMAIL" ;;
   }
 
   dimension: first_name {
     type: string
-    sql: ${TABLE}.first_name ;;
+    sql: ${TABLE}."FIRST_NAME" ;;
   }
 
   dimension: gender {
     type: string
-    sql: ${TABLE}.gender ;;
+    sql: ${TABLE}."GENDER" ;;
   }
 
   dimension: last_name {
     type: string
-    sql: ${TABLE}.last_name ;;
+    sql: ${TABLE}."LAST_NAME" ;;
   }
 
   dimension: latitude {
     type: number
-    sql: ${TABLE}.latitude ;;
+    sql: ${TABLE}."LATITUDE" ;;
   }
 
   dimension: longitude {
     type: number
-    sql: ${TABLE}.longitude ;;
+    sql: ${TABLE}."LONGITUDE" ;;
   }
 
   dimension: state {
     type: string
-    sql: ${TABLE}.state ;;
+    sql: ${TABLE}."STATE" ;;
   }
 
   dimension: traffic_source {
     type: string
-    sql: ${TABLE}.traffic_source ;;
+    sql: ${TABLE}."TRAFFIC_SOURCE" ;;
   }
 
   dimension: zip {
     type: zipcode
-    sql: ${TABLE}.zip ;;
+    sql: ${TABLE}."ZIP" ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [id, first_name, last_name, events.count, order_items.count]
+    drill_fields: [id, first_name, last_name, order_items.count]
   }
 }

@@ -1,52 +1,52 @@
 view: products {
-  sql_table_name: public.products ;;
+  sql_table_name: PUBLIC.PRODUCTS ;;
   drill_fields: [id]
 
   dimension: id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}."ID" ;;
   }
 
   dimension: brand {
     type: string
-    sql: ${TABLE}.brand ;;
+    sql: ${TABLE}."BRAND" ;;
   }
 
   dimension: category {
     type: string
-    sql: ${TABLE}.category ;;
+    sql: ${TABLE}."CATEGORY" ;;
   }
 
   dimension: cost {
     type: number
-    sql: ${TABLE}.cost ;;
+    sql: ${TABLE}."COST" ;;
   }
 
   dimension: department {
     type: string
-    sql: ${TABLE}.department ;;
+    sql: ${TABLE}."DEPARTMENT" ;;
   }
 
   dimension: distribution_center_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.distribution_center_id ;;
+    sql: ${TABLE}."DISTRIBUTION_CENTER_ID" ;;
   }
 
   dimension: name {
     type: string
-    sql: ${TABLE}.name ;;
+    sql: ${TABLE}."NAME" ;;
   }
 
   dimension: retail_price {
     type: number
-    sql: ${TABLE}.retail_price ;;
+    sql: ${TABLE}."RETAIL_PRICE" ;;
   }
 
   dimension: sku {
     type: string
-    sql: ${TABLE}.sku ;;
+    sql: ${TABLE}."SKU" ;;
   }
 
   measure: count {

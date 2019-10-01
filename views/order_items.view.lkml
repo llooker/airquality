@@ -1,11 +1,11 @@
 view: order_items {
-  sql_table_name: public.order_items ;;
+  sql_table_name: PUBLIC.ORDER_ITEMS ;;
   drill_fields: [id]
 
   dimension: id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}."ID" ;;
   }
 
   dimension_group: created {
@@ -19,7 +19,7 @@ view: order_items {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_at ;;
+    sql: ${TABLE}."CREATED_AT" ;;
   }
 
   dimension_group: delivered {
@@ -33,18 +33,18 @@ view: order_items {
       quarter,
       year
     ]
-    sql: ${TABLE}.delivered_at ;;
+    sql: ${TABLE}."DELIVERED_AT" ;;
   }
 
   dimension: inventory_item_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.inventory_item_id ;;
+    sql: ${TABLE}."INVENTORY_ITEM_ID" ;;
   }
 
   dimension: order_id {
     type: number
-    sql: ${TABLE}.order_id ;;
+    sql: ${TABLE}."ORDER_ID" ;;
   }
 
   dimension_group: returned {
@@ -58,12 +58,12 @@ view: order_items {
       quarter,
       year
     ]
-    sql: ${TABLE}.returned_at ;;
+    sql: ${TABLE}."RETURNED_AT" ;;
   }
 
   dimension: sale_price {
     type: number
-    sql: ${TABLE}.sale_price ;;
+    sql: ${TABLE}."SALE_PRICE" ;;
   }
 
   dimension_group: shipped {
@@ -77,18 +77,18 @@ view: order_items {
       quarter,
       year
     ]
-    sql: ${TABLE}.shipped_at ;;
+    sql: ${TABLE}."SHIPPED_AT" ;;
   }
 
   dimension: status {
     type: string
-    sql: ${TABLE}.status ;;
+    sql: ${TABLE}."STATUS" ;;
   }
 
   dimension: user_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.user_id ;;
+    sql: ${TABLE}."USER_ID" ;;
   }
 
   measure: count {
