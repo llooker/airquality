@@ -15,24 +15,24 @@ explore: order_items {
 #       field: products.brand
 #       user_attribute: brand
 #     }
-  label: "(1) Orders, Items and Users"
-  view_name: order_items
+  label: "(1) Air Quality Monitoring"
+  view_name: air_quality_facts
   join: inventory_items {
     #Left Join only brings in items that have been sold as order_item
     type: full_outer
     relationship: one_to_one
-    sql_on: ${inventory_items.id} = ${order_items.inventory_item_id} ;;
+    sql_on: ${inventory_items.id} = ${air_quality_facts.inventory_item_id} ;;
   }
 
   join: users {
     relationship: many_to_one
-    sql_on: ${order_items.user_id} = ${users.id} ;;
+    sql_on: ${air_quality_facts.user_id} = ${users.id} ;;
   }
 
   join: user_order_facts {
     view_label: "Users"
     relationship: many_to_one
-    sql_on: ${user_order_facts.user_id} = ${order_items.user_id} ;;
+    sql_on: ${user_order_facts.user_id} = ${air_quality_facts.user_id} ;;
   }
 
   join: products {
