@@ -100,6 +100,6 @@ measure: percent_of_total {
 
 
 set: detail {
-  fields: [created_date, AQI_Measurement_Devices.state, AQI_Measurement_Devices.city, device_id, Daily_Air_Quality_Index, AQI_Measurement_Devices.name]
+  fields: [created_date, AQI_Measurement_Devices.state, AQI_Measurement_Devices.city, device_id, air_quality_level, Daily_Air_Quality_Index, AQI_Measurement_Devices.name,AQI_Measurement_Devices.email]
 }
 }

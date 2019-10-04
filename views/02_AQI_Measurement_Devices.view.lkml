@@ -46,7 +46,7 @@ view: AQI_Measurement_Devices {
           type: textarea
           required: yes
           default:
-          "Hi {{ users.first_name._value }},
+          "Hi {{ AQI_Measurement_Devices.first_name._value }},
 
           I've been noticing some unusual readings from your AQI device.
           Have you been experiencing any technical issues recently?
@@ -114,6 +114,6 @@ view: AQI_Measurement_Devices {
     }
 
   set: detail {
-    fields: [air_quality_facts.created_date, AQI_Measurement_Devices.state, AQI_Measurement_Devices.city, air_quality_facts.device_id, air_quality_facts.Daily_Air_Quality_Index, AQI_Measurement_Devices.name]
+    fields: [air_quality_facts.created_date, AQI_Measurement_Devices.state, AQI_Measurement_Devices.city, air_quality_facts.device_id, air_quality_facts.air_quality_level, air_quality_facts.Daily_Air_Quality_Index, AQI_Measurement_Devices.name,AQI_Measurement_Devices.email]
   }
   }
